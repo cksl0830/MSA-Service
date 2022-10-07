@@ -2,6 +2,7 @@ package com.rest.webservices.restfulwebservices.user;
 
 import com.rest.webservices.restfulwebservices.exception.UserNotFoundException;
 import jakarta.validation.Valid;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -37,11 +38,13 @@ public class UserController {
 
     // 멤버 한명 조회
     @GetMapping("/users/{id}")
-    public User retrieveUser(@PathVariable int id) {
+    public EntityModel<User> retrieveUser(@PathVariable int id) {
         User user = userDaoService.findOne(id);
         if (user == null)
             throw new UserNotFoundException("id " + id + ": not found");
-        return user;
+
+        EntityModel<User> entityModel = EntityModel.of(user);
+        return entityModel;
     }
 
     // 멤버 삭제
