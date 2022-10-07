@@ -16,6 +16,7 @@ public class User {
      * @JsonProperty : json 형식에서 key 이름 설정
      * @JsonIgnore : 클라이언트가 보지못하게 정적 필터링
      * @JsonIgnoreProperties : 클라이언트가 보지못하게 정적 필터링 (전체 클래스에서 복수 설정)
+     * @JsonFilter : 동적 필터링 (url마다 다르게 보여주기)
      */
     private Integer id;
     @NotNull
