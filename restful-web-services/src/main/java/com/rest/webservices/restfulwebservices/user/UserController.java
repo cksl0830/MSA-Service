@@ -10,11 +10,11 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-public class UserResource {
+public class UserController {
 
     private final UserDaoService userDaoService;
 
-    public UserResource(UserDaoService userDaoService) {
+    public UserController(UserDaoService userDaoService) {
         this.userDaoService = userDaoService;
     }
 
