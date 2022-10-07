@@ -1,6 +1,7 @@
 package com.rest.webservices.restfulwebservices.user;
 
 import com.rest.webservices.restfulwebservices.exception.UserNotFoundException;
+import com.rest.webservices.restfulwebservices.jpa.BoardRepository;
 import com.rest.webservices.restfulwebservices.jpa.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
@@ -10,17 +11,16 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/jpa")
 public class UserJpaController {
 
-//    private UserDaoService userDaoService;
     private UserRepository userRepository;
 
-    public UserJpaController(UserDaoService userDaoService, UserRepository userRepository) {
-//        this.userDaoService = userDaoService;
+    public UserJpaController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

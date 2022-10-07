@@ -1,16 +1,14 @@
 package com.rest.webservices.restfulwebservices.user;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @JsonProperty : json 형식에서 key 이름 설정
@@ -39,6 +37,14 @@ public class User {
     private LocalDate birth;
 
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Board> boardList;
+
+    public List<Board> getBoardList() {
+        return boardList;
+    }
 
     public User(Integer id, String name, String team, LocalDate birth, String password) {
         this.id = id;
