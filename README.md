@@ -1,2 +1,2 @@
 # MSA with SpringBoot and SpringCloud
- 스프링클라우드와 MSA의 이해를 위해 학습
+간단한 SpringBoot 프로젝트에 MSA 도입 (feat. Docker and k8s)
