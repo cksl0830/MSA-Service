@@ -1,2 +1,12 @@
 
 microservices/limits-service/mvnw.cmd
+.DS_Store
+microservices/.idea/microservices.iml
+microservices/.idea/modules.xml
+microservices/.idea/vcs.xml
+microservices/spring-cloud-config-server/.mvn/wrapper/maven-wrapper.jar
+microservices/spring-cloud-config-server/.mvn/wrapper/maven-wrapper.properties
+microservices/spring-cloud-config-server/.mvn/wrapper/maven-wrapper.jar
+microservices/spring-cloud-config-server/mvnw
+microservices/spring-cloud-config-server/mvnw.cmd
+microservices/spring-cloud-config-server/.mvn/wrapper/maven-wrapper.jar
